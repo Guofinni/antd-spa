@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Layout, Menu, Icon } from 'antd';
+import { HomeOutlined } from '@ant-design/icons';
+import { Layout, Menu } from 'antd';
 import { Link } from 'react-router-dom';
 
 const { Sider } = Layout;
@@ -48,7 +49,7 @@ export default class SiderCustom extends Component{
     };
     render(){
         const { collapsed, firstHide, openKey, selectedKey } = this.state;
-        return(
+        return (
             <Sider
             trigger={null}
             collapsed={collapsed}
@@ -64,10 +65,10 @@ export default class SiderCustom extends Component{
                 >
 
                     <Menu.Item key={"/app"}>
-                        <Link to={"/app"}><Icon type="home" /><span>首页</span></Link>
+                        <Link to={"/app"}><HomeOutlined /><span>首页</span></Link>
                     </Menu.Item>
                 </Menu>
             </Sider>
-        )
+        );
     }
 }

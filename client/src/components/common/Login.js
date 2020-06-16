@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import {setCookie} from "../../helpers/cookies";
 import '../../style/login.less';
-import { Form, Icon, Input, Button, Checkbox, message, Spin } from 'antd';
+import { LockOutlined, UserOutlined } from '@ant-design/icons';
+import { Form } from '@ant-design/compatible';
+import '@ant-design/compatible/assets/index.css';
+import { Input, Button, Checkbox, message, Spin } from 'antd';
 const FormItem = Form.Item;
 
 const client_id = 'b7f8065ab0c7188c2a21';
@@ -51,46 +54,44 @@ class NormalLoginForm extends Component {
 
     render() {
         const { getFieldDecorator } = this.props.form;
-        return (
-            this.state.isLoding?<Spin size="large" className="loading" />:
-            <div className="login">
-                <div className="login-form">
-                    <div className="login-logo">
-                        <div className="login-name">MSPA</div>
-                    </div>
-                    <Form onSubmit={this.handleSubmit} style={{maxWidth: '300px'}}>
-                        <FormItem>
-                            {getFieldDecorator('username', {
-                                rules: [{ required: true, message: '请输入用户名!' }],
-                            })(
-                                <Input prefix={<Icon type="user" style={{ fontSize: 13 }} />} placeholder="用户名 (admin)" />
-                            )}
-                        </FormItem>
-                        <FormItem>
-                            {getFieldDecorator('password', {
-                                rules: [{ required: true, message: '请输入密码!' }],
-                            })(
-                                <Input prefix={<Icon type="lock" style={{ fontSize: 13 }} />} type="password" placeholder="密码 (admin)" />
-                            )}
-                        </FormItem>
-                        <FormItem style={{marginBottom:'0'}}>
-                            {getFieldDecorator('remember', {
-                                valuePropName: 'checked',
-                                initialValue: true,
-                            })(
-                                <Checkbox>记住我</Checkbox>
-                            )}
-                            <a className="login-form-forgot" href="" style={{float:'right'}}>忘记密码?</a>
-                            <Button type="primary" htmlType="submit" className="login-form-button" style={{width: '100%'}}>
-                                登录
-                            </Button>
-                            Or <a href="">现在就去注册!</a>
-                        </FormItem>
-                    </Form>
-                    <a className="githubUrl" href={`${authorize_uri}?client_id=${client_id}&redirect_uri=${redirect_uri}`}> </a>
+        return this.state.isLoding?<Spin size="large" className="loading" />:
+        <div className="login">
+            <div className="login-form">
+                <div className="login-logo">
+                    <div className="login-name">MSPA</div>
                 </div>
+                <Form onSubmit={this.handleSubmit} style={{maxWidth: '300px'}}>
+                    <FormItem>
+                        {getFieldDecorator('username', {
+                            rules: [{ required: true, message: '请输入用户名!' }],
+                        })(
+                            <Input prefix={<UserOutlined style={{ fontSize: 13 }} />} placeholder="用户名 (admin)" />
+                        )}
+                    </FormItem>
+                    <FormItem>
+                        {getFieldDecorator('password', {
+                            rules: [{ required: true, message: '请输入密码!' }],
+                        })(
+                            <Input prefix={<LockOutlined style={{ fontSize: 13 }} />} type="password" placeholder="密码 (admin)" />
+                        )}
+                    </FormItem>
+                    <FormItem style={{marginBottom:'0'}}>
+                        {getFieldDecorator('remember', {
+                            valuePropName: 'checked',
+                            initialValue: true,
+                        })(
+                            <Checkbox>记住我</Checkbox>
+                        )}
+                        <a className="login-form-forgot" href="" style={{float:'right'}}>忘记密码?</a>
+                        <Button type="primary" htmlType="submit" className="login-form-button" style={{width: '100%'}}>
+                            登录
+                        </Button>
+                        Or <a href="">现在就去注册!</a>
+                    </FormItem>
+                </Form>
+                <a className="githubUrl" href={`${authorize_uri}?client_id=${client_id}&redirect_uri=${redirect_uri}`}> </a>
             </div>
-        );
+        </div>;
     }
 }
 

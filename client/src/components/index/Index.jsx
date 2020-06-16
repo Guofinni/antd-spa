@@ -1,6 +1,7 @@
-import React, { Component } from 'react'; 
+import React, { Component } from 'react';
 import BreadcrumbCustom from '../common/BreadcrumbCustom';
-import { Card, Avatar, Row, Col, Progress, Timeline, Collapse, Table, Icon } from 'antd';
+import { EllipsisOutlined, InfoCircleOutlined } from '@ant-design/icons';
+import { Card, Avatar, Row, Col, Progress, Timeline, Collapse, Table } from 'antd';
 import APP_ROOT from '../../style/img/avatar.jpg';
 import './index.less';
 import CountUp from 'react-countup';
@@ -30,10 +31,10 @@ export default class MIndex extends Component {
         let imgName = ["Mails","Dialogue","Carts","Collection"];
         let count = ["1379","768","192","413"];
         let cu = imgSrc.map(function(item,index){
-            return(
+            return (
                 <Col md={6} key={item}>
                     <Card style={{cursor:'pointer', marginBottom:16}}
-                          actions={[<Icon type="info-circle-o" />, <Icon type="ellipsis" />]}>
+                          actions={[<InfoCircleOutlined />, <EllipsisOutlined />]}>
                         <Meta
                             style={{fontSize:22}}
                             avatar={<img src={require('../../style/img/'+item+'.png')} alt=""/>}
@@ -42,7 +43,7 @@ export default class MIndex extends Component {
                         />
                     </Card>
                 </Col>
-            )
+            );
         });
         return cu;
     }
