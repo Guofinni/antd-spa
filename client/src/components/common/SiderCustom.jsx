@@ -3,7 +3,6 @@ import { Layout, Menu, Icon } from 'antd';
 import { Link } from 'react-router-dom';
 
 const { Sider } = Layout;
-const SubMenu = Menu.SubMenu;
 
 export default class SiderCustom extends Component{
     constructor(props){
@@ -66,23 +65,6 @@ export default class SiderCustom extends Component{
 
                     <Menu.Item key={"/app"}>
                         <Link to={"/app"}><Icon type="home" /><span>首页</span></Link>
-                    </Menu.Item>
-                    <Menu.Item key={"/app/form"}>
-                        <Link to={"/app/form"}><Icon type="form" /><span>表单</span></Link>
-                    </Menu.Item>
-                    <SubMenu
-                    key="/app/chart"
-                    title={<span><Icon type="area-chart" /><span>图表</span></span>}
-                    >
-                        <Menu.Item key="/app/chart/echarts">
-                            <Link to={'/app/chart/echarts'}><span>echarts</span></Link>
-                        </Menu.Item>
-                    </SubMenu>
-                    <Menu.Item key="/app/richText">
-                        <Link to={'/app/richText'}><Icon type="edit" /><span>富文本</span></Link>
-                    </Menu.Item>
-                    <Menu.Item key="/app/upload">
-                        <Link to={'/app/upload'}><Icon type="upload" /><span>文件上传</span></Link>
                     </Menu.Item>
                 </Menu>
             </Sider>

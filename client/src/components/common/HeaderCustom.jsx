@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Layout, Icon, Menu, Badge } from 'antd';
-import { Link } from 'react-router-dom';
+import { Layout, Icon, Menu } from 'antd';
 import history from './history';
 import {removeCookie} from "../../helpers/cookies";
 
@@ -40,13 +39,6 @@ export default class HeaderCustom extends Component{
                     mode="horizontal"
                     style={{ lineHeight: '64px', float: 'right' }}
                 >
-                    <Menu.Item key="schedule">
-                        <Link to="/app/header/Calendars">
-                            <Badge count={3} overflowCount={99} style={{height:'15px',lineHeight:'15px'}}>
-                                <Icon type="schedule" style={{fontSize:16, color: '#1DA57A' }}/>
-                            </Badge>
-                        </Link>
-                    </Menu.Item>
                     <SubMenu 
                         title={<span>
                             <Icon type="user" style={{fontSize:16, color: '#1DA57A' }}/>{this.props.username}

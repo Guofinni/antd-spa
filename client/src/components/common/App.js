@@ -7,12 +7,7 @@ import {getCookie, setCookie} from "../../helpers/cookies";
 import SiderCustom from './SiderCustom';
 import HeaderCustom from './HeaderCustom';
 import MIndex from '../index/Index';
-import Calendars from '../header/Calendars';
-import Echarts from '../chart/echarts/Echarts';
-import UForm from '../form/Form';
 import noMatch from './404';
-import RichText from "../richText/RichText";
-import UploadEditor from "../upload/UploadEditor";
 
 const {Content, Footer} = Layout;
 
@@ -54,16 +49,11 @@ export default class App extends Component {
                     <Content style={{margin: '0 16px'}}>
                         <Switch>
                             <Route exact path={'/app'} component={MIndex} />
-                            <Route exact path={'/app/form'} component={UForm} />
-                            <Route exact path={'/app/header/Calendars'} component={Calendars} />
-                            <Route exact path={'/app/chart/echarts'} component={Echarts} />
-                            <Route exact path={'/app/richText'} component={RichText} />
-                            <Route exact path={'/app/upload'} component={UploadEditor} />
                             <Route component={noMatch} />
                         </Switch>
                     </Content>
                     <Footer style={{textAlign: 'center'}}>
-                        MSPA ©2017-2018 Created by zysoft
+                        MSPA ©2017-2018 Created by APP_ROOT
                     </Footer>
                 </Layout>
             </Layout>

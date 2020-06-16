@@ -12,8 +12,8 @@ const users = [{
     username:'admin',
     password:'admin'
 },{
-    username:'zysoft',
-    password:'zysoft'
+    username:'guojiafen',
+    password:'123456'
 }];
 
 function PatchUser(values) {  //匹配用户
